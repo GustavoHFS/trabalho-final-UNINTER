@@ -7,7 +7,6 @@ const AdminDashboard = () => {
   const [stats, setStats] = useState({ users: 0, appointments: 0 });
   const [users, setUsers] = useState([]);
   
-  // NOVO: Estado para simular o status dos suprimentos
   const [supplyStatus, setSupplyStatus] = useState('NORMAL');
 
   useEffect(() => {
@@ -24,28 +23,23 @@ const AdminDashboard = () => {
         <button onClick={() => navigate('/')} className="btn-danger">Sair</button>
       </header>
 
-      {/* Mudei de 'three-cols' para 'four-cols' para caber o novo card */}
       <div className="dashboard-grid four-cols" style={{ marginBottom: '2rem' }}>
         
-        {/* Card 1 */}
         <div className="card" style={{ borderLeft: '4px solid #3b82f6' }}>
           <h3>Total de Usuários</h3>
           <p style={{ fontSize: '2rem', fontWeight: 'bold' }}>{stats.users}</p>
         </div>
 
-        {/* Card 2 */}
         <div className="card" style={{ borderLeft: '4px solid #10b981' }}>
           <h3>Consultas Realizadas</h3>
           <p style={{ fontSize: '2rem', fontWeight: 'bold' }}>{stats.appointments}</p>
         </div>
 
-        {/* Card 3 */}
         <div className="card" style={{ borderLeft: '4px solid #f59e0b' }}>
           <h3>Leitos Disponíveis</h3>
           <p style={{ fontSize: '2rem', fontWeight: 'bold' }}>12</p>
         </div>
 
-        {/* Card 4: NOVO - Controle de Suprimentos (Interativo) */}
         <div className="card" style={{ borderLeft: `4px solid ${supplyStatus === 'CRITICO' ? '#e63946' : '#2a9d8f'}` }}>
           <h3>Suprimentos</h3>
           <p style={{ fontSize: '1.2rem', fontWeight: 'bold', color: supplyStatus === 'CRITICO' ? '#e63946' : '#2a9d8f' }}>

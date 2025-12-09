@@ -13,7 +13,7 @@ const PatientDashboard = () => {
     e.preventDefault();
     const newItem = {
       id: Date.now(),
-      patient: 'Joãozinho', // Idealmente viria do login real
+      patient: 'Joãozinho',
       doctor: 'Médico Plantonista',
       date: newAppt.date,
       time: newAppt.time,
@@ -31,7 +31,6 @@ const PatientDashboard = () => {
     saveData('appointments', updatedList);
   };
 
-  // NOVO: Função para simular a visualização de documentos médicos
   const viewReport = (appt) => {
     alert(`📄 Abrindo Documentos da Consulta:\n\nPaciente: ${appt.patient}\nMédico: ${appt.doctor}\nData: ${appt.date}\n\nInclui: Prontuário, Receitas e Pedidos de Exame.`);
   };
@@ -45,7 +44,6 @@ const PatientDashboard = () => {
 
       <div className="dashboard-grid three-cols">
         
-        {/* CARD 1: Agendamento */}
         <div className="card">
           <h2>Nova Consulta</h2>
           <form onSubmit={handleSchedule}>
@@ -67,7 +65,6 @@ const PatientDashboard = () => {
           </form>
         </div>
 
-        {/* CARD 2: Telemedicina */}
         <div className="card">
           <h2>Entrar na Telemedicina</h2>
           <p style={{marginBottom: '1rem', color: 'var(--text-gray)'}}>
@@ -80,7 +77,6 @@ const PatientDashboard = () => {
           </a>
         </div>
 
-        {/* CARD 3: Minhas Consultas */}
         <div className="card">
           <h2>Minhas Consultas</h2>
           {appointments.length === 0 ? <p>Nenhuma consulta agendada.</p> : (
@@ -94,9 +90,7 @@ const PatientDashboard = () => {
                     </div>
                   </div>
                   
-                  {/* Container de Botões */}
                   <div style={{display: 'flex', gap: '10px', width: '100%'}}>
-                     {/* NOVO BOTÃO: Ver Laudo */}
                      <button onClick={() => viewReport(appt)} className="btn-action" style={{flex: 1}}>
                        📄 Ver Laudo
                      </button>
