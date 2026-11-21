@@ -1,16 +1,70 @@
-# React + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# VidaPlus · SGHSS
 
-Currently, two official plugins are available:
+**Protótipo acadêmico de um sistema de gestão hospitalar.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![React](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Protótipo-6b7280)
 
-## React Compiler
+</div>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Visão geral
 
-## Expanding the ESLint configuration
+O **VidaPlus (SGHSS)** é um projeto de conclusão acadêmica desenvolvido com **React**, para demonstrar interfaces e fluxos de um sistema de gestão hospitalar. A aplicação reúne três perspectivas de uso — **paciente, profissional de saúde e administração** — em painéis distintos.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Funcionalidades
+
+| Perfil | Recursos demonstrados |
+| --- | --- |
+| **Paciente** | Agendamento e cancelamento de consultas, listagem de atendimentos e acesso ilustrativo a documentos. |
+| **Profissional de saúde** | Visualização da agenda, abertura de atendimento e formulário ilustrativo de prontuário. |
+| **Administrador** | Consulta da base de usuários, indicadores de demonstração e simulação do estado de suprimentos. |
+
+A interface também apresenta links externos para acesso ao Zoom; **não há integração nativa de telemedicina**.
+
+## Tecnologias
+
+**React 19 · JavaScript · Vite 7 · React Router · Lucide React · CSS · localStorage**
+
+A navegação utiliza **React Router**. Os dados iniciais são fictícios e os agendamentos do paciente são salvos no **localStorage** do navegador.
+
+## Executar localmente
+
+**Pré-requisito:** Node.js e npm instalados.
+
+~~~bash
+npm install
+npm run dev
+~~~
+
+Abra o endereço indicado pelo Vite no terminal. Para gerar a versão de produção:
+
+~~~bash
+npm run build
+~~~
+
+## Organização
+
+~~~text
+src/
+├── App.jsx               rotas e navegação
+├── data/mockData.js       dados fictícios e localStorage
+├── pages/
+│   ├── Login.jsx
+│   ├── PatientDashboard.jsx
+│   ├── DoctorDashboard.jsx
+│   └── AdminDashboard.jsx
+├── App.css
+└── index.css
+~~~
+
+## Escopo e limitações
+
+Este é um **protótipo educacional**, não um sistema hospitalar pronto para uso real. A seleção de perfis simula o acesso — não existe autenticação efetiva. O prontuário exibido no painel médico não é persistido e parte dos indicadores é fixa ou demonstrativa. **Não utilize dados pessoais ou clínicos reais.**
+
+---
+
+Projeto acadêmico desenvolvido por **Gustavo Henrique** para a UNINTER.
